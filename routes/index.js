@@ -11,5 +11,8 @@ router.get('/',indexControl.showIndex)
  */
 router.get('/chapter', indexControl.showChapter);
 router.get('/chapter/:id', indexControl.showChapter);
-
+/**
+ * 列表页
+ */
+router.get('/list',indexControl.showList);
 module.exports = router

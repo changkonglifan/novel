@@ -19,3 +19,13 @@ exports.showChapter = async (ctx, next) => {
         title:'章节页'
     })
 }
+/**
+ * 列表页
+ * @param {*} ctx 
+ * @param {*} next 
+ */
+exports.showList = async (ctx, next) => {
+    await ctx.render('list',{
+        title:'列表页'
+    })
+}
