@@ -1,19 +1,15 @@
-const router = require('koa-router')()
+const router = require('koa-router')();
+const { webSet } = require('../config')
+const indexControl = require('../controls')
 
-router.get('/', async (ctx, next) => {
-  await ctx.render('index', {
-    title: 'Hello Koa 2!'
-  })
-})
-
-router.get('/string', async (ctx, next) => {
-  ctx.body = 'koa2 string'
-})
-
-router.get('/json', async (ctx, next) => {
-  ctx.body = {
-    title: 'koa2 json'
-  }
-})
+/**
+ * 展示首页
+ */
+router.get('/',indexControl.showIndex)
+/**
+ * 章节页
+ */
+router.get('/chapter', indexControl.showChapter);
+router.get('/chapter/:id', indexControl.showChapter);
 
 module.exports = router
