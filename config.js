@@ -4,7 +4,7 @@
 const mongodb = {
 	port: 27017,//数据库端口
 	host: 'localhost',//数据库地址
-	collection:'book',//数据库集合名（数据库名）
+	collection:'novel',//数据库集合名（数据库名）
 }
 //mysql 配置
 const mysql = {

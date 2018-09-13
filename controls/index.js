@@ -1,4 +1,5 @@
 const {webSet} = require('../config');
+const types = require('../model/types');
 /**
  * 显示首页
  * @param {*} ctx 
@@ -6,7 +7,8 @@ const {webSet} = require('../config');
  */
 exports.showIndex = async (ctx, next) => {
     await ctx.render('index',{
-        title: webSet.title
+        ...ctx.state,
+        current:'index'
     })
 }
 /**
@@ -27,5 +29,10 @@ exports.showChapter = async (ctx, next) => {
 exports.showList = async (ctx, next) => {
     await ctx.render('list',{
         title:'列表页'
+    })
+}
+exports.showBook = async (ctx, next) => {
+    await ctx.render('book',{
+        title:'书本页面'
     })
 }

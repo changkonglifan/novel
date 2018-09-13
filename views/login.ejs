@@ -1,87 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>登录-响应式</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" href="Public/plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="Public/css/site.css">
-</head>
-<body>
-	<!-- 头部 -->
-	<nav class="navbar navbar-default">
-		<div class="container">
-		  	<div class="container-fluid">
-			    <!-- 移动端显示 -->
-			    <div class="navbar-header">
-			      	<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menus-navbar" aria-expanded="false">
-				        <span class="sr-only">Toggle navigation</span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-				        <span class="icon-bar"></span>
-			      	</button>
-			      	<a class="navbar-brand" href="#">小说</a>
-			    </div>
-			  	<div class="collapse navbar-collapse" id="menus-navbar">
-			      	<ul class="nav navbar-nav">
-				        <li class="active"><a href="#">玄幻小说 <span class="sr-only">(current)</span></a></li>
-				        <li><a href="#">言情小说</a></li>
-				        <li><a href="#">仙侠小说</a></li>
-				        <li><a href="#">都市小说</a></li>
-				        <li><a href="#">历史小说</a></li>
-				        <li><a href="#">网游小说</a></li>
-				        <li><a href="#">完本小说</a></li>
-			      	</ul>
-			      	<ul class="nav navbar-nav navbar-right">
-				        <li><a href="#">登录</a></li>
-				        <li><a href="#">免费注册</a></li>
-			      	</ul>
-			    </div>
-		  	</div>
-		</div>
-	</nav>
-	<!-- 内容部分 -->
-	<!-- 主宽度 -->
-	<div class="container body-content">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						用户登录<span class="pull-right"><a href="#">新用户注册</a></span>
-					</div>
-					<div class="panel-body">
-						<div class="form-group form-item">
-							<label class="form-label">用户名</label>
-							<div class="form-input">
-								<input type="text" placeholder="请输入用户名" class="form-control">
-							</div>
-						</div>
-						<div class="form-group form-item">
-							<label class="form-label">密码</label>
-							<div class="form-input">
-								<input type="password" placeholder="请输入密码" class="form-control">
-							</div>
-						</div>
-						<div class="form-group form-item">
-							<div class="form-input">
-								<input type="checkbox"><span class="rt-txt">记住登录状态</span>
-							</div>
-						</div>
-						<div class="form-group form-item">
-							<button class="btn btn-primary">登录</button>
-						</div>
-					</div>
+<script type='text/javascript' src='/js/login.js'></script>
+<div class="dialog-login-register">
+		<!-- 登录面板 -->
+		<div class="login-dialog active">
+			<div class="login-tit">
+				登录<a href="javascript:void(0)" class="login-close">×</a>
+			</div>
+			<div class="login-form">
+				<div class="form-item">
+					<i class="fa fa-user-o" aria-hidden="true"></i><input type="text" name="username" id="username" placeholder="请输入用户名">
+					<p class="form-error"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="error-txt">用户名不能为空</span></p>
+				</div>
+				<div class="form-item">
+					<i class="fa fa-lock" aria-hidden="true"></i><input type="password" name="password" id="password" placeholder="请输入密码">
+					<p class="form-error"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="error-txt">密码不能为空</span></p>
+				</div>
+				<div class="form-btn">
+					<button type="button" class="btn btn-primary login-form-btn">登 录</button>
+					<p class="form-label">
+						<a href="javascript:void(0)" class="forget-psw">忘记密码</a><a href="javascript:void(0)" class="tap-register">注册用户</a>
+					</p>
+					<!-- 第三方登录 -->
+					<p class="form-label login-third">
+						<a href="#"><i class="fa fa-qq" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+					</p>
 				</div>
 			</div>
 		</div>
-		<footer>
-			<p>版权</p>
-			<p>Copyright © 2018 </p>
-		</footer>
+		<!-- 注册面板 -->
+		<div class="register-dialog">
+			<div class="login-tit">
+				注册用户<a href="javascript:void(0)" class="login-close">×</a>
+			</div>
+			<div class="login-form register-form">
+				<div class="form-item">
+					<i class="fa fa-user" aria-hidden="true"></i><input type="text" id="r-username" name="username" class="username" placeholder="请输入用户名">
+					<p class="form-error"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="error-txt">用户名不能为空</span></p>
+				</div>
+				<div class="form-item">
+					<i class="fa fa-user-o" aria-hidden="true"></i><input type="text" id="r-name" name="name" class="username" placeholder="请输入真实姓名">
+				</div>
+				<div class="form-item">
+					<i class="fa fa-lock" aria-hidden="true"></i><input type="password" id="r-password" name="password" class="password" placeholder="请输入密码">
+					<p class="form-error"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="error-txt">密码不能为空</span></p>
+				</div>
+				<div class="form-item">
+					<i class="fa fa-lock" aria-hidden="true"></i><input type="password" id="r-re-password"  name="password" class="rePassword" placeholder="请再次输入密码">
+					<p class="form-error"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><span class="error-txt">输入密码不能为空</span></p>
+				</div>
+				<div class="form-item">
+					<i class="fa fa-envelope-o" aria-hidden="true"></i><input type="text" id="r-email"  name="email" class="rePassword" placeholder="请输入邮箱">
+		
+				</div>
+				<div class="form-btn">
+					<button type="button" class="btn btn-primary register-form-btn">注 册</button>
+					<p class="form-label">
+						<a href="javascript:void(0)" class="tap-login">直接登录</a>
+					</p>
+					<!-- 第三方登录 -->
+					<p class="form-label login-third">
+						<a href="#"><i class="fa fa-qq" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-weibo" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
-	<script type="text/javascript" src="Public/js/jquery.js"></script>
-	<script type="text/javascript" src="Public/plugins/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
