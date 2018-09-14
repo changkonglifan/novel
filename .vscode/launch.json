@@ -7,6 +7,12 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "node调试",
+            "program": "${workspaceFolder}/bin/www"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "nodemon",
             "runtimeExecutable": "nodemon",
             "program": "${workspaceFolder}/bin/www",

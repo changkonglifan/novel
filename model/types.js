@@ -15,5 +15,11 @@ const typeObj = {};
 typeObj.getAllTypes = async ()=>{
     return await typeModel.find();
 }
-
+/**
+ * 查找type
+ * @param {*} params 
+ */
+typeObj.getType = async (params) => {
+    return await typeModel.find(params);
+}
 module.exports = typeObj;

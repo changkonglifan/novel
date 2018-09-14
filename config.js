@@ -19,7 +19,8 @@ const webSet ={
 		secret: 'blog',
 		key: 'blog',
 		maxAge: 2592000000
-	}
+    },
+    pageSize: 10
 }
 module.exports = {
 	mongodb,

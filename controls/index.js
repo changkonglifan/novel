@@ -1,5 +1,6 @@
 const {webSet} = require('../config');
 const types = require('../model/types');
+const books = require('../model/book');
 /**
  * 显示首页
  * @param {*} ctx 
@@ -18,6 +19,8 @@ exports.showIndex = async (ctx, next) => {
  */
 exports.showChapter = async (ctx, next) => {
     await ctx.render('chapter',{
+        ...ctx.state,
+        current: 'index',
         title:'章节页'
     })
 }
@@ -27,12 +30,24 @@ exports.showChapter = async (ctx, next) => {
  * @param {*} next 
  */
 exports.showList = async (ctx, next) => {
+    const id = ctx.params.id;
+    const type = await types.getType({typeId: id}); 
+    const params = {
+        typeName: type[0].typeName,
+        page: 1
+    }
+    const list = await books.getBookListByTypeName(params);
     await ctx.render('list',{
-        title:'列表页'
+        ...ctx.state,
+        current: 'index',
+        title:'列表页',
+
     })
 }
 exports.showBook = async (ctx, next) => {
     await ctx.render('book',{
+        ...ctx.state,
+        current: 'index',
         title:'书本页面'
     })
 }
