@@ -16,8 +16,8 @@ const webSet ={
 	port: 80,//服务端口
 	salt: 'caicai',//加密盐
 	session:{
-		secret: 'blog',
-		key: 'blog',
+		secret: 'novel',
+		key: 'novel',
 		maxAge: 2592000000
     },
     pageSize: 10

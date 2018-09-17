@@ -23,243 +23,37 @@
 				 	</div>
 				  	<div class="panel-body list-box">
 				  		<div class="row">
+						  <% recommend.forEach(function(item){ %> 
 						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="/chapter/50988" class="thumbnail">
-						    		<img src="Public/images/50988s.jpg" alt="" height="182">
+						    	<a href="/chapter/<%= item.id %>" class="thumbnail">
+						    		<img src=<%= item.img %> onerror="javascript:this.src='images/error.jpg';" alt="" height="182">
 						    		<div class="caption">
-								        <h3>元尊</h3>
-								        <p class="txt-author">天蚕土豆 / 著</p>
-								        <p class="txt-watching">135121在看</p>
+								        <h3><%= item.name %></h3>
+								        <p class="txt-author"><%= item.author %> / 著</p>
+								        <p class="txt-watching"><%= item.watch %> 在看</p>
 							      </div>
 						    	</a>
 						    </div>
-						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="#" class="thumbnail">
-						    		<img src="Public/images/50988s.jpg" alt="" height="182">
-						    		<div class="caption">
-								        <h3>元尊</h3>
-								        <p class="txt-author">天蚕土豆 / 著</p>
-								        <p class="txt-watching">135121在看</p>
-							      </div>
-						    	</a>
-						    </div>
-						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="#" class="thumbnail">
-						    		<img src="Public/images/50988s.jpg" alt="" height="182">
-						    		<div class="caption">
-								        <h3>元尊</h3>
-								        <p class="txt-author">天蚕土豆 / 著</p>
-								        <p class="txt-watching">135121在看</p>
-							      </div>
-						    	</a>
-						    </div>
-						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="#" class="thumbnail">
-						    		<img src="Public/images/50988s.jpg" alt="" height="182">
-						    		<div class="caption">
-								        <h3>元尊</h3>
-								        <p class="txt-author">天蚕土豆 / 著</p>
-								        <p class="txt-watching">135121在看</p>
-							      </div>
-						    	</a>
-						    </div>
-						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="#" class="thumbnail">
-						    		<img src="Public/images/50988s.jpg" alt="" height="182">
-						    		<div class="caption">
-								        <h3>元尊</h3>
-								        <p class="txt-author">天蚕土豆 / 著</p>
-								        <p class="txt-watching">135121在看</p>
-							      </div>
-						    	</a>
-						    </div>
-						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="#" class="thumbnail">
-						    		<img src="Public/images/50988s.jpg" alt="" height="182">
-						    		<div class="caption">
-								        <h3>元尊</h3>
-								        <p class="txt-author">天蚕土豆 / 著</p>
-								        <p class="txt-watching">135121在看</p>
-							      </div>
-						    	</a>
-						    </div>
-						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="#" class="thumbnail">
-						    		<img src="Public/images/50988s.jpg" alt="" height="182">
-						    		<div class="caption">
-								        <h3>元尊</h3>
-								        <p class="txt-author">天蚕土豆 / 著</p>
-								        <p class="txt-watching">135121在看</p>
-							      </div>
-						    	</a>
-						    </div>
-						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="#" class="thumbnail">
-						    		<img src="Public/images/50988s.jpg" alt="" height="182">
-						    		<div class="caption">
-								        <h3>元尊</h3>
-								        <p class="txt-author">天蚕土豆 / 著</p>
-								        <p class="txt-watching">135121在看</p>
-							      </div>
-						    	</a>
-						    </div>
+						  <% }) %>
 				  		</div>
 				  	</div>
 				</div>
 			</div>
 			<!-- 右边 -->
 			<div class="col-md-4">
-				<ul class="nav nav-tabs nav-pills" role="tablist">
-					<li role="presentation" class="active"><a href="#tab-monthvisited" role="tab" data-toggle="tab" aria-expanded="false">本月热门</a></li>
-					<li role="presentation" class=""><a href="#tab-collection" role="tab" data-toggle="tab" aria-expanded="false">收藏排行</a></li>
-					<li role="presentation" class=""><a href="#tab-reco" role="tab" data-toggle="tab" aria-expanded="true">网友推荐</a></li>
-				</ul>
-				<div class="tab-content mt10">
-					<div id="tab-monthvisited" class="tab-pane fade in active">
+				<div class="panel panel-default">
+				  	<div class="panel-heading" style='height:55px;'>
+						<h3>热门列表</h3>
+				 	</div>
+					<div class="list-box"> 
 						<ul class="list-group">
-							<li class="list-group-item">
-								<span class="nums nums-c1">1</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums nums-c1">2</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums nums-c1">3</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">4</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">5</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">6</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">7</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">8</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">9</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">10</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">11</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">12</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">13</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">14</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">15</span><a href="#">夺命停不下来</a><span class="text-muted">/作者</span><span class="pull-right text-muted">2199</span>
-							</li>
-						</ul>
-					</div>
-					<div id="tab-collection" class="tab-pane fade">
-						<ul class="list-group">
-							<li class="list-group-item">
-								<span class="nums nums-c1">1</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums nums-c1">2</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums nums-c1">3</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">4</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">5</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">6</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">7</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">8</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">9</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">10</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">11</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">12</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">13</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">14</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">15</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-						</ul>
-					</div>
-					<div id="tab-reco" class="tab-pane fade">
-						<ul class="list-group">
-							<li class="list-group-item">
-								<span class="nums nums-c1">1</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums nums-c1">2</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums nums-c1">3</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">4</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">	
-								<span class="nums">5</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">6</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">7</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">8</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">9</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">10</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">11</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">12</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">13</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">14</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
-							<li class="list-group-item">
-								<span class="nums">15</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-							</li>
+							<% hot.forEach(function(item, index){ %>
+								<li class="list-group-item">
+									<span class="nums nums-c<%= index < 3 ? 1 : ''  %>"><%= index +1 %></span><a href="chapter/<%= item.id %>"><%= item.name %></a><span class="text-muted">/<%= item.author %></span><span class="pull-right text-muted"><%= item.watch %></span>
+								</li>	
+							<% }) %>
+						
+							
 						</ul>
 					</div>
 				</div>
@@ -273,86 +67,16 @@
 				  	</div>
 			    	<table class="table">
 			    		<tbody>
+						<% last.forEach(function(item){ %>
 			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
+			    				<td class="hidden-xs text-muted" width="15%"><%= item.type %></td>
+			    				<td ><a href="/chapter/<%= item.id %>"><%= item.name %></a></td>
+			    				<td class="hidden-xs"><a href="/book/<%= item.id %>/<%= item.chapterId%>"><%= item.chapterName %> </a>
 			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
+			    				<td class="txt-muted"><%= item.author %></td>
+			    				<td class="tr"><%= item.updateTIme %></td>
 			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%">言情小说</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="hidden-xs"><a href="#">	第554章 chapter 553 兄妹情深呐</a>
-			    				</td>
-			    				<td class="txt-muted">十方娘子</td>
-			    				<td class="tr">4-5 15:56</td>
-			    			</tr>
+						<% }) %>
 			    		</tbody>
 			    	</table>
 				</div>

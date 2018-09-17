@@ -1,4 +1,3 @@
-const {webSet} = require('../config');
 const types = require('../model/types');
 const books = require('../model/book');
 /**
@@ -7,9 +6,15 @@ const books = require('../model/book');
  * @param {*} next 
  */
 exports.showIndex = async (ctx, next) => {
+    const recommend = await books.getRecommend();//推荐
+    const last = await books.getLastUpdate();//最近更新
+    const hot = await books.getHotList();//热门列表
     await ctx.render('index',{
         ...ctx.state,
-        current:'index'
+        current:'index',
+        recommend,
+        last,
+        hot
     })
 }
 /**

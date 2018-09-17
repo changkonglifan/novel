@@ -4,7 +4,7 @@
 const { mongodb } = require('../config')
 var mongoose = require('mongoose');
 var chalk = require("chalk");
-mongoose.connection.openUri(`mongodb://${mongodb.host}:${mongodb.port}/${mongodb.collection}`); //连接到一个test的数据库
+mongoose.connect(`mongodb://${mongodb.host}:${mongodb.port}/${mongodb.collection}`,{ useNewUrlParser: true }); //连接到一个test的数据库
 
 mongoose.Promise = require('bluebird');
 const db = mongoose.connection;

@@ -1,7 +1,7 @@
 {"_id":{"$oid":"5b9a1f051b4c9440848a3d36"},"typeName":"玄幻奇幻","typeId":"1"}
-{"_id":{"$oid":"5b9a1f841b4c9440848a3f00"},"typeId":"2","typeName":"武侠仙侠"}
-{"_id":{"$oid":"5b9a1f8c1b4c9440848a3f25"},"typeId":"3","typeName":"都市言情"}
-{"_id":{"$oid":"5b9a1f951b4c9440848a3f46"},"typeId":"4","typeName":"历史军事"}
 {"_id":{"$oid":"5b9a1f9b1b4c9440848a3f5c"},"typeId":"5","typeName":"科幻灵异"}
 {"_id":{"$oid":"5b9a1fa11b4c9440848a3f6c"},"typeId":"6","typeName":"网游竞技"}
+{"_id":{"$oid":"5b9a1f8c1b4c9440848a3f25"},"typeId":"3","typeName":"都市言情"}
+{"_id":{"$oid":"5b9a1f951b4c9440848a3f46"},"typeId":"4","typeName":"历史军事"}
+{"_id":{"$oid":"5b9a1f841b4c9440848a3f00"},"typeId":"2","typeName":"武侠仙侠"}
 {"_id":{"$oid":"5b9a1fa61b4c9440848a3f75"},"typeId":"7","typeName":"女生频道"}
