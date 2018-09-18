@@ -1,5 +1,4 @@
-const mongoose = require('../dataHelp/mongodb');
-const chapterModel = require('./chapter')
+const mongoose = require('../dataHelp/mongodb') 
 const {webSet} = require('../config')
 const schema = mongoose.Schema;
 
@@ -12,11 +11,15 @@ const bookSchema = new schema({
     id: String,//书id
     watch: Number,//阅读次数
     updateTime: { type: Date, default: Date.now},//更新时间
-    isRecommend:  {type: Boolean, default: true}//是否推荐
+    isRecommend:  {type: Boolean, default: true},//是否推荐
+    chapters:{
+        type: schema.Types.ObjectId,
+        ref:'chapter'
+    }
 })
 //定义model
 var bookModel = mongoose.model('books', bookSchema);
-
+ 
 const bookObj = {};
 /**
  * 翻页查询
@@ -52,25 +55,36 @@ bookObj.getBookListByTypeName = async (params) => {
  */
 bookObj.getRecommend = async () => {
     return await bookModel
-                        .find(
+                        .aggregate(
                             {
-                                isRecommend: true
+                                $lookup:
+                                {
+                                    from: "chapters",
+                                    localField: "id",
+                                    foreignField: "bookId",
+                                    as: "items"
+                                }
                             },
                             {
-                                img:1,
-                                time:1,
-                                name:1,
-                                watch:1, 
-                                id:1,
-                                author: 1
-                            }
-                        )
-                        .sort(
+                                $project: {
+                                    img: 1,
+                                    time: 1,
+                                    name: 1,
+                                    watch: 1,
+                                    id: 1,
+                                    author: 1
+                                }
+                            },
                             {
-                                updateTime: 1
+                                $match: { isRecommend: true }
+                            },
+                            {
+                                $limit: 10
+                            },
+                            {
+                                $sort: 'updateTime'
                             }
-                        )
-                        .limit(10);
+                        );
 }
 /**
  * 根据时间查询最新更新十条
@@ -90,22 +104,7 @@ bookObj.getLastUpdate = async () => {
                         )
                         .sort({updateTime:1})
                         .limit(10)
-                        .populate(
-                            {
-                                path:'id',
-                                select:{
-                                    chapterName:1,
-                                    chpaterId:1,
-                                    updateTime: 1
-                                },
-                                options:{
-                                    sort:{
-                                        updateTime:1
-                                    },
-                                    limit: 1
-                                }
-                            }
-                        );
+                        .populate('chapters')
 }
 /**
  * 获取热门列表
