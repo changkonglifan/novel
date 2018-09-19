@@ -25,6 +25,7 @@
     "koa-views": "^5.2.1",
     "koa-webpack-middleware": "^1.0.7",
     "mongoose": "^5.2.14",
+    "mysql": "^2.16.0",
     "pug": "^2.0.0-rc.1"
   },
   "devDependencies": {

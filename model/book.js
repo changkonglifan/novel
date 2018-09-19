@@ -19,6 +19,12 @@ var bookModel = mongoose.model('books', bookSchema);
 
 const bookObj = {};
 /**
+ * 查找所有
+ */
+bookObj.getAll = async () => {
+    return await bookModel.find();
+}
+/**
  * 翻页查询
  * @param {*} params 
  */

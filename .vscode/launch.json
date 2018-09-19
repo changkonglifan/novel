@@ -7,6 +7,12 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/dataHelp/exportDataToMysql.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
             "name": "node调试",
             "program": "${workspaceFolder}/bin/www"
         },

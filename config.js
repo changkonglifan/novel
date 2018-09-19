@@ -7,8 +7,12 @@ const mongodb = {
 	collection:'novel',//数据库集合名（数据库名）
 }
 //mysql 配置
-const mysql = {
-
+const mysqldb = {
+	host: 'localhost',
+	port: 3306,
+	user : 'root',
+	password : 'root',
+	database: 'novel'
 }
 //其他配置项
 const webSet ={
@@ -24,6 +28,6 @@ const webSet ={
 }
 module.exports = {
 	mongodb,
-	mysql,
+	mysqldb,
 	webSet
 }

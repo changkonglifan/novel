@@ -2,14 +2,12 @@ const mongoose = require('../dataHelp/mongodb');
 const schema = mongoose.Schema;
 
 const chaptersSchema = new schema({
-    name: String,//书名id
-    author: String,//作者
-    time: Date,//最后更新时间
-    type: String,//类型
-    img: String,//封面
-    id: String,//书id
-    watch: Number,//阅读次数
-    isRecommend: Boolean,//是否推荐
+    bookId: String,//
+    chpaterId: String,//
+    chapterName: String,//
+    chapterTxt: String,//
+    updateTime: Date,//
+    createTime: Date,//
 })
 //定义model
 var chapterModel = mongoose.model('chapters', chaptersSchema);
@@ -32,5 +30,10 @@ chapterObj.getChapterByBookId = async (id) => {
         )
         .limit(1);
 }
-
-return chapterObj;
+/**
+ * 查询所有
+ */
+chapterObj.getAll = async ()=>{
+    return await chapterModel.find();
+}
+module.exports = chapterObj;
