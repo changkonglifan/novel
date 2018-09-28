@@ -1,14 +1,16 @@
-const types = require('../model/types');
-const books = require('../model/book');
+// const types = require('../model/types');
+// const books = require('../model/book');
+const sqlList = require('../model/sqlList');
+const mysqlHelp = require('../dataHelp/mysqlHelp');
 /**
  * 显示首页
  * @param {*} ctx 
  * @param {*} next 
  */
 exports.showIndex = async (ctx, next) => {
-    const recommend = await books.getRecommend();//推荐
-    const last = await books.getLastUpdate();//最近更新
-    const hot = await books.getHotList();//热门列表
+    const recommend = await mysqlHelp.query(sqlList.GET_RECOMMEND,[]);
+    const last = await mysqlHelp.query(sqlList.GET_LAST,[]);
+    const hot = await mysqlHelp.query(sqlList.GET_BOOKS,['watch',20]);
     await ctx.render('index',{
         ...ctx.state,
         current:'index',
