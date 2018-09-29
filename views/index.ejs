@@ -25,7 +25,7 @@
 				  		<div class="row">
 						  <% recommend.forEach(function(item){ %> 
 						    <div class="col-md-3 col-xs-6 list-item">
-						    	<a href="/chapter/<%= item.id %>" class="thumbnail">
+						    	<a href="/chapter/<%= item.bookId %>" class="thumbnail">
 						    		<img src=<%= item.img %> onerror="javascript:this.src='images/error.jpg';" alt="" height="182">
 						    		<div class="caption">
 								        <h3><%= item.name %></h3>
@@ -67,16 +67,16 @@
 				  	</div>
 			    	<table class="table">
 			    		<tbody>
-						<% last.forEach(function(item){ %>
-			    			<tr>
-			    				<td class="hidden-xs text-muted" width="15%"><%= item.type %></td>
-			    				<td ><a href="/chapter/<%= item.id %>"><%= item.name %></a></td>
-			    				<td class="hidden-xs"><a href="/book/<%= item.id %>/<%= item.chapterId%>"><%= item.chapterName %> </a>
-			    				</td>
-			    				<td class="txt-muted"><%= item.author %></td>
-			    				<td class="tr"><%= item.updateTIme %></td>
-			    			</tr>
-						<% }) %>
+                            <% last.forEach(function(item){ %>
+                                <tr>
+                                    <td class="hidden-xs text-muted" width="15%"><%= item.type %></td>
+                                    <td ><a href="/chapter/<%= item.bookId %>"><%= item.name %></a></td>
+                                    <td class="hidden-xs"><a href="/book/<%= item.chapterId %>/<%= item.chapterId%>"><%= item.chapterName %> </a>
+                                    </td>
+                                    <td class="txt-muted"><%= item.author %></td>
+                                    <td class="tr"><%= item.updateTIme %></td>
+                                </tr>
+                            <% }) %>
 			    		</tbody>
 			    	</table>
 				</div>
@@ -88,56 +88,14 @@
 				  	</div>
 			    	<table class="table">
 			    		<tbody>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
-			    			<tr>
-			    				<td class="hidden-xs text-muted">言情</td>
-			    				<td ><a href="#">重生之废材修仙</a></td>
-			    				<td class="tr txt-muted">肖晶月</td>
-			    			</tr>
+			    			<% lastIn.forEach(function(item){ %>
+                                <tr>
+                                    <td class="hidden-xs text-muted"><%= item.type %></td>
+                                    <td ><a href="/chapter/<%= item.bookId %>"><%= item.name %></a></td>
+                                    <td class="tr txt-muted"><%= item.author %></td>
+                                </tr> 
+                            <% }) %>
+			    			
 			    		</tbody>
 			    	</table>
 				</div>

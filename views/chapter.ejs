@@ -5,23 +5,23 @@
 	<div class="container body-content">
 		<!-- 面包屑 -->
 		<ol class="breadcrumb hidden-xs">
-			<li><a href="#">首页</a></li>
+			<li><a href="/">首页</a></li>
 			<li><a href="#">言情小说</a></li>
-			<li class="active">都市超级医圣</li>
+			<li class="active"><%= bookInfo.name %></li>
 		</ol>
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<div class="col-md-2 col-xs-8 hidden-xs">
-					<img src="Public/images/50988s.jpg" alt="" width="140" class="img-thumbnail">
+					<img src="<%= bookInfo.img.substr(1,bookInfo.img.length - 1) %>" alt="" width="140" class="img-thumbnail">
 				</div>
 				<div class="col-md-10">
-					<h1 class="book-title">都市超级医圣</h1>
+					<h1 class="book-title"><%= bookInfo.name %></h1>
 					<p class="tags">
-                        <a class="red" href="http://www.shuqizw.com/modules/article/authorarticle.php?author=%B6%CF%C7%C5%B2%D0%D1%A9" target="_blank" title="作者：断桥残雪">断桥残雪</a>
-                        <a class="red" href="/list/2.html" target="_blank" title="言情小说">言情小说</a>
-                        <span class="blue">字数：782万</span>
-                        <span class="blue">阅读数：36w+</span>
-                        <span class="blue">连载中</span>
+                        <a class="red" href="#" target="_blank" title="作者：<%= bookInfo.author %>"><%= bookInfo.author %></a>
+                        <a class="red" href="/list/2.html" target="_blank" title="<%= bookInfo.type %>"><%= bookInfo.type %></a>
+                        <!--<span class="blue">字数：782万</span> -->
+                        <span class="blue"><%= bookInfo.watch %></span>
+                        <!-- <span class="blue">连载中</span> -->
 					</p>
 					<p class="bk-info">
 						最新章节：<a href="#">正文</a> <a href="#">第1441章</a> <a href="#">你算什么东西？</a> <span>（2018-04-08 18:23）</span>
