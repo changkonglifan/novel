@@ -46,12 +46,7 @@ exports.showChapter = async (ctx, next) => {
  */
 exports.showList = async (ctx, next) => {
     const id = ctx.params.id;
-    const type = await types.getType({typeId: id}); 
-    const params = {
-        typeName: type[0].typeName,
-        page: 1
-    }
-    const list = await books.getBookListByTypeName(params);
+    
     await ctx.render('list',{
         ...ctx.state,
         current: 'index',
