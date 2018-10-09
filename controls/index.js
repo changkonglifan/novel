@@ -46,13 +46,16 @@ exports.showChapter = async (ctx, next) => {
  */
 exports.showList = async (ctx, next) => {
     const id = ctx.params.id;
-    
+    const typeName = await mysqlHelp.query(sqlList.GET_TYPE_NAME_BY_ID,[id]);
+    const last = await mysqlHelp.query(sqlList.GET_BOOKS_BY_TYPENAME,[typeName[0].typeName,'time',10]);
+    const hot = await mysqlHelp.query(sqlList.GET_BOOKS_BY_TYPENAME, [typeName[0].typeName,'watch', 10]);
     await ctx.render('list',{
         ...ctx.state,
         current: 'index',
         title:'列表页',
-
-    })
+        last,
+        hot
+    })  
 }
 exports.showBook = async (ctx, next) => {
     await ctx.render('book',{

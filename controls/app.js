@@ -14,3 +14,11 @@ exports.getHeaderDatas = async (ctx,next)=>{
     ctx.state.types = typesData;
     await next();
 }
+/**
+ * 404
+ * @param {*} ctx 
+ * @param {*} next 
+ */
+exports.show404 = async (ctx,next) => {
+    await ctx.render('404',{ title: '404' } )
+}

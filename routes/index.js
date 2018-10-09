@@ -21,4 +21,8 @@ router.get('/list/:id', appControl.getHeaderDatas, indexControl.showList);
  * 小说页 
  */
 router.get('/book/:id',indexControl.showBook)
+/**
+ * 404
+ */
+router.get('/404', appControl.show404)
 module.exports = router

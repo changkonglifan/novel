@@ -10,7 +10,7 @@ const index = require('./routes/index')
 const users = require('./routes/users')
 
 // error handler
-onerror(app)
+// onerror(app)
 
 // middlewares
 app.use(bodyparser({
@@ -31,14 +31,20 @@ app.use(async (ctx, next) => {
   const ms = new Date() - start
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
-
 // routes
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {
-  console.error('server error', err, ctx)
+  console.error('server error', err, ctx);
 });
 
+//404
+app.use(async (ctx, next) => {
+    if (ctx.status === 404) {
+        console.log('404 -----')
+        await ctx.redirect('404')
+    }
+})
 module.exports = app
