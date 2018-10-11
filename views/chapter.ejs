@@ -24,7 +24,7 @@
                         <!-- <span class="blue">连载中</span> -->
 					</p>
 					<p class="bk-info">
-						最新章节：<a href="#">正文</a> <a href="#">第1441章</a> <a href="#">你算什么东西？</a> <span>（2018-04-08 18:23）</span>
+						最新章节：<a href="/book/<%= bookInfo.bookId %>/<%= lastChapter.chapterId %>"><%= lastChapter.chapterName %></a> <span>（<%= moment(lastChapter.createTime).format('YYYY-MM-DD') %>）</span>
 					</p>
 					<div class="btns">
 						<button class="btn btn-info">投票推荐</button>
@@ -41,93 +41,17 @@
 				</div>
 			</div>
 		</div>
-		<div class="panel panel-danger">
-			<div class="panel-heading fb">
-				《都市超级医圣》最新章节
-			</div>
-			<div class="panel-body panel-newlist">
-				<div class="row">
-					<div class="col-md-4">
-						<a href="#">第1441章 你算什么东西？</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#">第1440章 李总您还不知道吗？</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#">第1439章 你口味还真重啊！</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#">第1441章 你算什么东西？</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#">第1440章 李总您还不知道吗？</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#">第1439章 你口味还真重啊！</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#">第1441章 你算什么东西？</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#">第1440章 李总您还不知道吗？</a>
-					</div>
-					<div class="col-md-4">
-						<a href="#">第1439章 你口味还真重啊！</a>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div class="panel panel-default panel-chapter">
 			<div class="panel-heading fb">
 				《都市超级医圣》全部章节目录
 			</div>
 			<div class="panel-body">
 				<div class="row">
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第204章 出售厂子【第三更，求正版订阅】</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第204章 出售厂子【第三更，求正版订阅】</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第204章 出售厂子【第三更，求正版订阅】</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
-					<div class="col-md-3">
-						<a href="#">第一章 话别</a>
-					</div>
+                    <% chapters.forEach(function(item){ %>
+                        <div class="col-md-3">
+                            <a href="/book/<%= bookInfo.bookId %>/<%= item.chapterId %>"><%= item.chapterName %></a>
+                        </div>
+                    <% }) %>
 				</div>
 			</div>
 		</div>

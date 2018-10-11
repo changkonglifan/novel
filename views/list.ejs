@@ -12,51 +12,11 @@
 						<h3 class="panel-title">玄幻小说热门推荐</h3>
 					</div>
 					<ul class="list-group">
-						<li class="list-group-item">
-							<span class="nums nums-c1">1</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums nums-c1">2</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums nums-c1">3</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">4</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">5</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">6</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">7</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">8</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">9</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">10</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">11</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">12</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">13</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">14</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
-						<li class="list-group-item">
-							<span class="nums">15</span><a href="#">夺命停不下来</a><span class="txt-author">/作者</span><span class="pull-right">2199</span>
-						</li>
+                        <% hot.forEach(function(item,index){ %>
+                            <li class="list-group-item">
+                                <span class="nums nums-c<%= index < 3 ? 1 : '' %>"><%= index + 1 %></span><a href="/book/<%= item.bookId %>"><%= item.name %></a><span class="txt-author">/<%= item.author %></span><span class="pull-right"><%= item.watch %></span>
+                            </li>
+                        <% }) %>
 					</ul>
 				</div>
 			</div>
@@ -73,108 +33,17 @@
 			    				<th class="hidden-xs">最新章节</th>
 			    				<th>作者</th>
 			    				<th class="hidden-xs">更新时间</th>
-			    				<th class="tr">连载状态</th>
 			    			</tr>
 			    		</thead>
 			    		<tbody>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
+                        <% last.forEach(function(item){ %>
+                           <tr>
+			    				<td><a href="/chapter/<%= item.bookId %>"><%= item.name %></a></td>
+			    				<td class="hidden-xs"><a href="#" class="text-muted"><%= item.chapterName %></a></td>
+			    				<td><span href="#" class="text-muted"><%= item.author %></span></td>
+			    				<td class="hidden-xs"><span class="text-muted"><%= item.time %></span></td>
 			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
-			    			<tr>
-			    				<td><a href="#">脑子有台扭蛋机</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">第八十章 境界</a></td>
-			    				<td><a href="#" class="text-muted">泡椒鸡爪</a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted">18-4-5</a></td>
-			    				<td class="tr">连载中</td>
-			    			</tr>
+                        <% }) %>
 			    		</tbody>
 			    	</table>
 			    	<!-- 分页 -->

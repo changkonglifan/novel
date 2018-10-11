@@ -20,7 +20,7 @@ router.get('/list/:id', appControl.getHeaderDatas, indexControl.showList);
 /**
  * 小说页 
  */
-router.get('/book/:id',indexControl.showBook)
+router.get('/book/:bookId/:chapterId', appControl.getHeaderDatas,indexControl.showBook)
 /**
  * 404
  */

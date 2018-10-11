@@ -3,6 +3,7 @@
 const sqlList = require('../model/sqlList');
 const mysqlHelp = require('../dataHelp/mysqlHelp');
 const URL = require('url');
+const moment = require('moment')
 /**
  * 显示首页
  * @param {*} ctx 
@@ -34,9 +35,11 @@ exports.showChapter = async (ctx, next) => {
     await ctx.render('chapter',{
         ...ctx.state,
         current: 'index',
-        title:'章节页',
+        title:bookInfo[0].name,
         bookInfo: bookInfo[0],
-        chapters
+        chapters,
+        lastChapter: chapters[chapters.length - 1],
+        moment
     })
 }
 /**
@@ -47,20 +50,32 @@ exports.showChapter = async (ctx, next) => {
 exports.showList = async (ctx, next) => {
     const id = ctx.params.id;
     const typeName = await mysqlHelp.query(sqlList.GET_TYPE_NAME_BY_ID,[id]);
-    const last = await mysqlHelp.query(sqlList.GET_BOOKS_BY_TYPENAME,[typeName[0].typeName,'time',10]);
-    const hot = await mysqlHelp.query(sqlList.GET_BOOKS_BY_TYPENAME, [typeName[0].typeName,'watch', 10]);
+    const last = await mysqlHelp.query(sqlList.GET_BOOKS_LAST,[typeName[0].typeName,'time',14]);
+    const hot = await mysqlHelp.query(sqlList.GET_BOOKS_BY_TYPENAME, [typeName[0].typeName,'watch', 15]);
     await ctx.render('list',{
         ...ctx.state,
         current: 'index',
         title:'列表页',
         last,
-        hot
+        hot,
+        current: id 
     })  
 }
+/**
+ * 阅读页
+ * @param {*} ctx 
+ * @param {*} next 
+ */
 exports.showBook = async (ctx, next) => {
+    const bookId = ctx.params.bookId;
+    const chapterId = ctx.params.chapterId;
+    const bookInfo = await mysqlHelp.query(sqlList.GET_BOOK_INFO,[bookId]);
+    const chapter = await mysqlHelp.query(sqlList.GET_CHAPTER_TXT,[bookId,chapterId])
     await ctx.render('book',{
         ...ctx.state,
         current: 'index',
-        title:'书本页面'
+        title: bookInfo[0].name + chapter[0].chapterName,
+        chapter: chapter[0],
+        bookInfo,
     })
 }
