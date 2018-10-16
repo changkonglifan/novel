@@ -26,7 +26,7 @@
 					<option value="#006600">绿色</option>              
 					<option value="#0000ff">蓝色</option>              
 					<option value="#660000">棕色</option>			  
-				</select>
+				</select>   
 				<select name="fonttype" id="fonttype"> 		
 					<option value="24px">字号</option>	  
 					<option value="12px">小号</option> 			  
@@ -48,8 +48,11 @@
                     <span class="blue">连载中</span>
 				</p>
 			</div>
+            <pre>
+                <%= chapterTxt %>
+            </pre>
 			<div class="panel-body" id="book-content"> 
-                <%- chapter.chapterTxt.replace('请您关注微信公众号：dazhuzaiyuedu（长按三秒复制）书友们快关注起来吧！','').replace(/\n/g,'<br/>').replace(/\t/g,'<br/>').replace(/&nbsp;&nbsp;&nbsp;&nbsp;/g,'<br/>&nbsp;&nbsp;&nbsp;&nbsp;') %> 
+                <%= chapterTxt %> 
                 <p class="text-danger text-center mg0">本章未完，点击下一页继续阅读</p>
             </div>
 			<div class="read-pages">
