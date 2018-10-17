@@ -3,7 +3,8 @@
 const sqlList = require('../model/sqlList');
 const mysqlHelp = require('../dataHelp/mysqlHelp');
 const URL = require('url');
-const moment = require('moment')
+const moment = require('moment');
+const util = require('../util')
 /**
  * 显示首页
  * @param {*} ctx 
@@ -72,13 +73,14 @@ exports.showBook = async (ctx, next) => {
     const bookInfo = await mysqlHelp.query(sqlList.GET_BOOK_INFO,[bookId]);
     const chapter = await mysqlHelp.query(sqlList.GET_CHAPTER_TXT,[bookId,chapterId]);
     let chapterTxt = chapter[0].chapterTxt.replace('Ps:书友们，我是执笔天涯，推荐一款免费小说App，支持小说下载、听书、零广告、多种阅读模式', '').replace('请您关注微信公众号：dazhuzaiyuedu（长按三秒复制）书友们快关注起来吧！', '');
-    chapterTxt = chapterTxt.replace(/[\'\"\\\/\b\f\n\r\t]/g, '').replace(/[\@\#\$\%\^\&\*\{\}\:\"\L\<\>\?]/g,'')
+    chapterTxt = util.ToCDB(chapterTxt);
+    chapterTxt = chapterTxt.replace(/[\'\"\\\/\b\f\n\r\t]/g, '').replace(/[\@\#\$\%\^\&\*\{\}\:\"\L\<\>\?]/g, '').replace(/[u4E00-u9FA5]/g,'<br/>');
     await ctx.render('book',{
         ...ctx.state,
         current: 'index',
         title: bookInfo[0].name + chapter[0].chapterName,
         chapter: chapter[0],
-        bookInfo,
+        bookInfo: bookInfo[0],
         chapterTxt
     })
 }

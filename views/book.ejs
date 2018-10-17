@@ -7,7 +7,7 @@
 		<ol class="breadcrumb hidden-xs">
 			<li><a href="#">首页</a></li>
 			<li><a href="#">言情小说</a></li>
-			<li><a href="#">都市超级医圣</a></li>
+			<li><a href="#"><%=  %></a></li>
 			<li class="active">第一章 话别</li>
 			<span class="pull-right hidden-xs">
 				<select name="bcolor" id="bgcolor">
@@ -47,12 +47,9 @@
                     <span class="blue">阅读数：36w+</span>
                     <span class="blue">连载中</span>
 				</p>
-			</div>
-            <pre>
-                <%= chapterTxt %>
-            </pre>
+			</div> 
 			<div class="panel-body" id="book-content"> 
-                <%= chapterTxt %> 
+                <%- chapterTxt.replace(/\s{4}/g, "<br/>&nbsp;&nbsp;&nbsp;&nbsp;") %> 
                 <p class="text-danger text-center mg0">本章未完，点击下一页继续阅读</p>
             </div>
 			<div class="read-pages">
