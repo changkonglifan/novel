@@ -14,7 +14,7 @@
 					<ul class="list-group">
                         <% hot.forEach(function(item,index){ %>
                             <li class="list-group-item">
-                                <span class="nums nums-c<%= index < 3 ? 1 : '' %>"><%= index + 1 %></span><a href="/book/<%= item.bookId %>"><%= item.name %></a><span class="txt-author">/<%= item.author %></span><span class="pull-right"><%= item.watch %></span>
+                                <span class="nums nums-c<%= index < 3 ? 1 : '' %>"><%= index + 1 %></span><a href="/chapter/<%= item.bookId %>/<%= item.chapterId %>"><%= item.name %></a><span class="txt-author">/<%= item.author %></span><span class="pull-right"><%= item.watch %></span>
                             </li>
                         <% }) %>
 					</ul>
@@ -39,7 +39,7 @@
                         <% last.forEach(function(item){ %>
                            <tr>
 			    				<td><a href="/chapter/<%= item.bookId %>"><%= item.name %></a></td>
-			    				<td class="hidden-xs"><a href="#" class="text-muted"><%= item.chapterName %></a></td>
+			    				<td class="hidden-xs"><a href="/book/<%= item.bookId %>/<%= item.chapterId %>" class="text-muted"><%= item.chapterName %></a></td>
 			    				<td><span href="#" class="text-muted"><%= item.author %></span></td>
 			    				<td class="hidden-xs"><span class="text-muted"><%= item.time %></span></td>
 			    			</tr>

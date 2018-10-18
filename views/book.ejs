@@ -5,10 +5,10 @@
 	<div class="container body-content">
 		<!-- 面包屑 -->
 		<ol class="breadcrumb hidden-xs">
-			<li><a href="#">首页</a></li>
-			<li><a href="#">言情小说</a></li>
-			<li><a href="#"><%=  %></a></li>
-			<li class="active">第一章 话别</li>
+			<li><a href="/">首页</a></li>
+			<li><a href="/list/<%= type.typeId %>"><%= type.typeName %></a></li>
+			<li><a href="/book/<%= bookInfo.bookId %>"><%= bookInfo.name %></a></li>
+			<li class="active"><%= chapter.chapterName %></li>
 			<span class="pull-right hidden-xs">
 				<select name="bcolor" id="bgcolor">
 					<option style="background-color: #E9FAFF" value="#E9FAFF">底色</option>
