@@ -2,24 +2,25 @@ const sqlList = require('../model/sqlList');
 const mysqlHelp = require('../dataHelp/mysqlHelp');
 const URL = require('url');
 const moment = require('moment');
-const util = require('../util')
+const util = require('../util');
+const indexModel = require('../model/index.js');
 /**
  * 显示首页
  * @param {*} ctx 
  * @param {*} next 
  */
 exports.showIndex = async (ctx, next) => {
-    const recommend = await mysqlHelp.query(sqlList.GET_RECOMMEND,[]);
-    const last = await mysqlHelp.query(sqlList.GET_LAST,[]);
-    const hot = await mysqlHelp.query(sqlList.GET_BOOKS,['watch',20]);
-    const lastIn = await mysqlHelp.query(sqlList.GET_BOOKS,['createTime',10]);
+    const recommend = await indexModel.getRecommend([]);
+    const last = await indexModel.getLast([]);
+    const hot = await indexModel.getHots(['watch', 20]);
+    const lastIn = await indexModel.getLastIn(['createTime', 10]);
     await ctx.render('index',{
         ...ctx.state,
         current:'index',
         recommend,
         last,
         hot,
-        lastIn
+        lastInz 
     })
 }
 /**
@@ -29,8 +30,8 @@ exports.showIndex = async (ctx, next) => {
  */
 exports.showChapter = async (ctx, next) => {
     const bookId = ctx.params.id;
-    const bookInfo = await mysqlHelp.query(sqlList.GET_BOOK_INFO,[bookId]);
-    const chapters = await mysqlHelp.query(sqlList.GET_CHAPTERS_LIST,[bookId]);
+    const bookInfo = indexModel.getBookInfo([bookId]);
+    const chapters = indexModel.getChapterList([bookId]);
     await ctx.render('chapter',{
         ...ctx.state,
         current: 'index',
